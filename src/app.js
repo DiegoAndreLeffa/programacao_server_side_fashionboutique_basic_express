@@ -14,8 +14,15 @@ app.get('/customers', (req, res) => {
 })
 
 app.post('/customers', (req, res) => {
-	data.customers.push(req.body)
-	res.sendStatus(201)
+	
+	// Normalmente, estes dados são eviados ao banco de dados, que nos retorna um ID
+	// Vamos simular isso atribuindo ao ID o INDEX que o item terá no array
+	
+	let newCustomer = req.body
+	newCustomer.id = data.customers.length
+
+	data.customers.push(newCustomer)
+	res.status(201).json({"new_customer_id": newCustomer.id})
 })
 
 app.listen(port, () => {
