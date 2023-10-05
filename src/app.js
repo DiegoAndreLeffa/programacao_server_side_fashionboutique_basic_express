@@ -25,6 +25,23 @@ app.post('/customers', (req, res) => {
 	res.status(201).json({"new_customer_id": newCustomer.id})
 })
 
+// app.get('/customers/:id', (req, res) => {
+//     let idUsuario = req.params.id
+//     //Retornar apenas o elemento da lista que tem o id solicitado
+// })
+
+// app.put('/customers/:id', (req, res) => {
+//     let idUsuario = req.params.id
+//     //Alterar dados do elemento da lista com id
+// })
+
+
+// app.delete('/customers/:id', (req, res) => {
+//     let idUsuario = req.params.id
+//     // Remover elemento da lista com id 
+// })
+
+
 app.listen(port, () => {
   console.log('Example app listening on port: ' + port)
 })
